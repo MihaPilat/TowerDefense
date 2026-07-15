@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private EnemyHealth _health;
 
+    public EnemyConfig Config => _config;
+
     private void Awake()
     {
         _health = new EnemyHealth(_config.MaxHealth);

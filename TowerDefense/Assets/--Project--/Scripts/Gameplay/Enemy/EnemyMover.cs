@@ -1,11 +1,11 @@
 using UnityEngine;
 using Zenject;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private float _speed = 3f;
-
     private EnemyPath _path;
+    private EnemyConfig _enemyConfig;
 
     private int _currentWaypoint;
 
@@ -15,6 +15,11 @@ public class EnemyMover : MonoBehaviour
         _path = enemyPath;
     }
 
+    private void Awake()
+    {
+        _enemyConfig = GetComponent<Enemy>().Config;
+    }
+
     private void Update()
     {
         if (_currentWaypoint >= _path.Waypoints.Count)
@@ -22,7 +27,7 @@ public class EnemyMover : MonoBehaviour
 
         Vector3 target = _path.Waypoints[_currentWaypoint].transform.position;
 
-        transform.position = Vector3.MoveTowards(transform.position, target, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, _enemyConfig.Speed * Time.deltaTime);
 
         if(Vector3.Distance(transform.position,target)<0.1f)
         {
