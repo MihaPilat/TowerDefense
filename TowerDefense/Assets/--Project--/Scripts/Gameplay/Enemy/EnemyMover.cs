@@ -5,14 +5,18 @@ using Zenject;
 public class EnemyMover : MonoBehaviour
 {
     private EnemyPath _path;
+    private BaseHealth _baseHealth;
     private EnemyConfig _enemyConfig;
 
     private int _currentWaypoint;
 
+    private bool _IsReachBase;
+
     [Inject]
-    private void Construct(EnemyPath enemyPath)
+    private void Construct(EnemyPath enemyPath, BaseHealth baseHealth)
     {
         _path = enemyPath;
+        _baseHealth = baseHealth;
     }
 
     private void Awake()
@@ -23,7 +27,11 @@ public class EnemyMover : MonoBehaviour
     private void Update()
     {
         if (_currentWaypoint >= _path.Waypoints.Count)
+        {
+            ReachBase();
             return;
+        }
+
 
         Vector3 target = _path.Waypoints[_currentWaypoint].transform.position;
 
@@ -33,5 +41,15 @@ public class EnemyMover : MonoBehaviour
         {
             _currentWaypoint++;
         }
+    }
+
+    private void ReachBase()
+    {
+        if (_IsReachBase)
+            return;
+        _baseHealth.TakeDamage(_enemyConfig.Damage);
+
+        Destroy(gameObject,2f);
+        _IsReachBase = true;
     }
 }

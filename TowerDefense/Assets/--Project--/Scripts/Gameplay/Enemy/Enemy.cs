@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    public event Action<float, float> OnHealthChanged;
+    public event Action<int, int> OnHealthChanged;
     public event Action OnDied;
 
     [SerializeField] private EnemyConfig _config;
@@ -26,13 +26,13 @@ public class Enemy : MonoBehaviour, IDamageable
             TakeDamage(10);
         }
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         Debug.Log($"take {damage} damage");
         _health.TakeDamage(damage);
     }
 
-    private void HealthChanged(float current, float max)
+    private void HealthChanged(int current, int max)
     {
         OnHealthChanged?.Invoke(current, max);
     }

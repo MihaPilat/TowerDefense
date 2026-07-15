@@ -2,19 +2,19 @@ using System;
 
 public class EnemyHealth
 {
-    public event Action<float, float> OnHealthChanged;
+    public event Action<int, int> OnHealthChanged;
     public event Action OnDied;
 
-    public float MaxHealth { get; }
-    public float CurrentHealth { get; private set; }
+    public int MaxHealth { get; }
+    public int CurrentHealth { get; private set; }
 
-    public EnemyHealth(float maxHealth)
+    public EnemyHealth(int maxHealth)
     {
         MaxHealth = maxHealth;
         CurrentHealth = maxHealth;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (CurrentHealth <= 0)
             return;

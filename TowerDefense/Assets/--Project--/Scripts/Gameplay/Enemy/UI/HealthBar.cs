@@ -20,8 +20,8 @@ public class HealthBar : MonoBehaviour
     {
         _enemy.OnHealthChanged -= SetValue;
     }
-    private void SetValue(float current, float max)
+    private void SetValue(int current, int max)
     {
-        _fill.fillAmount = current / max;
+        _fill.fillAmount = (float)current / (float)max;
     }
 }

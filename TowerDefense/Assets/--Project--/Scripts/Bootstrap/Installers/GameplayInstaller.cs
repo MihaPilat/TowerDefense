@@ -5,12 +5,21 @@ using Zenject;
 public class GameplayInstaller : MonoInstaller
 {
     [SerializeField] private EnemyPath _enemyPath;
+    [SerializeField] private BaseHealth _baseHealth;
     [SerializeField] private Camera _mainCamera;
     public override void InstallBindings()
     {
         BindEnemyPath();
         BindMainCamera();
+        BindBaseHealth();
+    }
 
+    private void BindBaseHealth()
+    {
+        Container.Bind<BaseHealth>()
+            .FromInstance(_baseHealth)
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindMainCamera()
