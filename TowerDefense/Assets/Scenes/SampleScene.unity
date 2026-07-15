@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 600148283}
   - component: {fileID: 600148285}
   - component: {fileID: 600148284}
+  - component: {fileID: 600148286}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -656,6 +657,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &600148286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600148282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71caf5145510d93499d9ffa43f44e916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayInstaller
   _enemyPath: {fileID: 1534783274}
+  _mainCamera: {fileID: 330585545}
 --- !u!4 &1638768084
 Transform:
   m_ObjectHideFlags: 0
