@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float damage)
     {
+        Debug.Log($"take {damage} damage");
         _health.TakeDamage(damage);
     }
 
