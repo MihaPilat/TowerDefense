@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Test Enemy Config
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
   <MaxHealth>k__BackingField: 50
-  <Speed>k__BackingField: 8
+  <Speed>k__BackingField: 10
+  <Damage>k__BackingField: 10
