@@ -7,7 +7,7 @@ public class EnemyMover : MonoBehaviour
     private EnemyPath _path;
     private BaseHealth _baseHealth;
     private EnemyConfig _enemyConfig;
-
+    private Enemy _enemy;
     private int _currentWaypoint;
 
     private bool _IsReachBase;
@@ -18,10 +18,16 @@ public class EnemyMover : MonoBehaviour
         _path = enemyPath;
         _baseHealth = baseHealth;
     }
+    public void Init()
+    {
+        _currentWaypoint = 0;
+        _IsReachBase = false;
+    }
 
     private void Awake()
     {
-        _enemyConfig = GetComponent<Enemy>().Config;
+        _enemy = GetComponent<Enemy>();
+        _enemyConfig = _enemy.Config;
     }
 
     private void Update()
@@ -49,7 +55,7 @@ public class EnemyMover : MonoBehaviour
             return;
         _baseHealth.TakeDamage(_enemyConfig.Damage);
 
-        Destroy(gameObject,2f);
+        _enemy.ReclaimInPool();
         _IsReachBase = true;
     }
 }
