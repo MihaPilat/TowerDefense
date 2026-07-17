@@ -15,5 +15,5 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 1
   <Speed>k__BackingField: 20
   <Damage>k__BackingField: 10
-  <RewardGold>k__BackingField: 2
+  <RewardGold>k__BackingField: 20
   <DeathDelay>k__BackingField: 0.4

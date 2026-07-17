@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5dbb4481d092042b6b00d583647c27, type: 3}
   m_Name: Test Tower Config
   m_EditorClassIdentifier: Assembly-CSharp::TowerConfig
+  <Icon>k__BackingField: {fileID: 21300000, guid: 94c14ff7faf59fa41b2509f02a829502, type: 3}
+  <Cost>k__BackingField: 20
   <Damage>k__BackingField: 10
   <AttackCooldown>k__BackingField: 1
   <AttackRange>k__BackingField: 10

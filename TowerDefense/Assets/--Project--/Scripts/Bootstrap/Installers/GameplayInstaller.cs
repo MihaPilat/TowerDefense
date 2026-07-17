@@ -9,10 +9,34 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private Camera _mainCamera;
     public override void InstallBindings()
     {
+        BindTowerFactory();
         BindPoolFactory();
         BindEnemyPath();
         BindMainCamera();
         BindBaseHealth();
+        BindBuildService();
+        BindBuildController();
+    }
+
+    private void BindBuildController()
+    {
+        Container.BindInterfacesTo<BuildController>()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindBuildService()
+    {
+        Container.Bind<BuildService>()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindTowerFactory()
+    {
+        Container.Bind<TowerFactory>()
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindPoolFactory()

@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
 
     private readonly Collider[] _targetsBuffer = new Collider[30];
 
+    public TowerConfig Config => _towerConfig;
     private void Update()
     {
         UpdateCooldown();
