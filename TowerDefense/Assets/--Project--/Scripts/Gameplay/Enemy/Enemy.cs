@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private PoolFactory _originFactory;
     private Enemy _originPrefab;
+    private CurrencyService _currencyService;
 
     private float _deathDelay = 1f;
 
@@ -20,6 +22,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public EnemyConfig Config => _config;
 
+    [Inject]
+    public void Construct(
+        CurrencyService currencyService)
+    {
+        _currencyService = currencyService;
+    }
 
     public void Init(Enemy prefab, PoolFactory factory)
     {
@@ -77,6 +85,8 @@ public class Enemy : MonoBehaviour, IDamageable
         if (_isDie)
             return;
         _isDie = true;
+
+        _currencyService.AddGold(_config.RewardGold);
 
         OnDied?.Invoke();
 

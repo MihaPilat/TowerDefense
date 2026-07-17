@@ -13,6 +13,7 @@ public class CurrencyService
             return;
 
         Gold += amount;
+        Debug.Log($"Add {amount} gold. Total: {Gold}");
         GoldChanged?.Invoke(Gold);
     }
 
