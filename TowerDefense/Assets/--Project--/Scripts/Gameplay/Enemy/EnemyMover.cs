@@ -32,6 +32,9 @@ public class EnemyMover : MonoBehaviour
 
     private void Update()
     {
+        if (_enemy.IsDie)
+            return;
+
         if (_currentWaypoint >= _path.Waypoints.Count)
         {
             ReachBase();

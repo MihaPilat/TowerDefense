@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private bool _isDie;
 
+    public bool IsDie => _isDie;
     public EnemyConfig Config => _config;
 
     [Inject]
