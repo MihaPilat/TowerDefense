@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561ed2f8950de64784f1767af2b0edc, type: 3}
   m_Name: Test Enemy Config
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
-  <MaxHealth>k__BackingField: 50
+  <MaxHealth>k__BackingField: 1
   <Speed>k__BackingField: 20
   <Damage>k__BackingField: 10
+  <RewardGold>k__BackingField: 2
+  <DeathDelay>k__BackingField: 0.4
