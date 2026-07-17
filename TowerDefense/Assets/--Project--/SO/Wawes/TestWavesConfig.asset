@@ -17,4 +17,9 @@ MonoBehaviour:
     - Prefab: {fileID: 3933565618769349062, guid: ba94dd92473bc104e963f8abc041aae5, type: 3}
       Count: 10
     SpawnDelay: 0.5
+    DelayBeforeNextWave: 10
+  - Enemies:
+    - Prefab: {fileID: 3933565618769349062, guid: ba94dd92473bc104e963f8abc041aae5, type: 3}
+      Count: 20
+    SpawnDelay: 0.5
     DelayBeforeNextWave: 15
