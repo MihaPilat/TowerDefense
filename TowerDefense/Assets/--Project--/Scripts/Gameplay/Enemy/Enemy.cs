@@ -16,8 +16,6 @@ public class Enemy : MonoBehaviour, IDamageable
     private Enemy _originPrefab;
     private CurrencyService _currencyService;
 
-    private float _deathDelay = 1f;
-
     private bool _isDie;
 
     public EnemyConfig Config => _config;
@@ -95,7 +93,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private IEnumerator DeathCoroutine()
     {
-        yield return new WaitForSeconds(_deathDelay);
+        yield return new WaitForSeconds(_config.DeathDelay);
         _originFactory.Reclaim(this, _originPrefab);
     }
 

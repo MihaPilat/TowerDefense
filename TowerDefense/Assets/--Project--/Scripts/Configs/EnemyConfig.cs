@@ -7,4 +7,5 @@ public class EnemyConfig : ScriptableObject
     [field: SerializeField] public float Speed { get; private set; } = 3f;
     [field: SerializeField] public int Damage { get; private set; } = 10;
     [field: SerializeField] public int RewardGold { get; private set; } = 2;
+    [field: SerializeField] public float DeathDelay { get; private set; } = 0.4f;
 }
