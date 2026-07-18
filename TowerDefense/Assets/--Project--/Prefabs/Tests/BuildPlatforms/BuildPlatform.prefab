@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2611874316738168757}
   - component: {fileID: 6305122628333895580}
   - component: {fileID: 185307604794081024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuildPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

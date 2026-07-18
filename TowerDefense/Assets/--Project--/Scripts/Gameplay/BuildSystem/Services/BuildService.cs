@@ -1,48 +1,32 @@
-using UnityEngine;
+using System.Collections.Generic;
 using Zenject;
 
 public class BuildService
 {
     private readonly CurrencyService _currencyService;
     private readonly TowerFactory _towerFactory;
+    private readonly List<Tower> _availableTowers;
 
-    private Tower _selectedTower;
+    public List<Tower> AvailableTowers => _availableTowers;
 
-    public BuildService(CurrencyService currencyService, TowerFactory towerFactory)
+    public BuildService(CurrencyService currencyService, TowerFactory towerFactory, List<Tower> levelAvailableTowers)
     {
         _currencyService = currencyService;
         _towerFactory = towerFactory;
+        _availableTowers = levelAvailableTowers;
     }
 
-    public bool HasSelectedTower =>
-        _selectedTower != null;
-
-    public void SelectTower(Tower towerPrefab)
+    public bool BuildTowerDirectly(Tower towerPrefab, BuildPlatform buildPlatform)
     {
-        _selectedTower = towerPrefab;
-    }
+        if (buildPlatform.IsOccupied) return false;
 
-    public void ClearSelection()
-    {
-        _selectedTower = null;
-    }
+        int cost = towerPrefab.Config.Cost;
 
-    public bool TryBuildTower(BuildPlatform buildPlatform)
-    {
-        if (_selectedTower == null)
-            return false;
+        if (!_currencyService.TrySpendGold(cost)) return false;
 
-        if (buildPlatform.IsOccupied)
-            return false;
-
-        int cost = _selectedTower.Config.Cost;
-
-        if (!_currencyService.TrySpendGold(cost))
-            return false;
-
-        _towerFactory.Create(_selectedTower, buildPlatform.transform.position);
-
+        _towerFactory.Create(towerPrefab, buildPlatform.transform.position);
         buildPlatform.Occupy();
+        buildPlatform.ToggleHighlight(false);
 
         return true;
     }

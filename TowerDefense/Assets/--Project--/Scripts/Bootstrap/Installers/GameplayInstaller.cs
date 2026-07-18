@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -7,6 +8,9 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private EnemyPath _enemyPath;
     [SerializeField] private BaseHealth _baseHealth;
     [SerializeField] private Camera _mainCamera;
+    [SerializeField] private LayerMask _platformLayerMask;
+    [SerializeField] private List<Tower> _availableTowersPrefabsList;
+
     public override void InstallBindings()
     {
         BindTowerFactory();
@@ -15,8 +19,17 @@ public class GameplayInstaller : MonoInstaller
         BindEnemyPath();
         BindMainCamera();
         BindBaseHealth();
+        BindBuildMenuUI();
         BindBuildService();
         BindBuildController();
+    }
+
+    private void BindBuildMenuUI()
+    {
+        Container.Bind<BuildMenuUI>()
+            .FromComponentInHierarchy()
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindProjectileFactory()
@@ -30,6 +43,7 @@ public class GameplayInstaller : MonoInstaller
     {
         Container.BindInterfacesTo<BuildController>()
             .AsSingle()
+            .WithArguments(_platformLayerMask)
             .NonLazy();
     }
 
@@ -37,6 +51,7 @@ public class GameplayInstaller : MonoInstaller
     {
         Container.Bind<BuildService>()
             .AsSingle()
+            .WithArguments(_availableTowersPrefabsList)
             .NonLazy();
     }
 

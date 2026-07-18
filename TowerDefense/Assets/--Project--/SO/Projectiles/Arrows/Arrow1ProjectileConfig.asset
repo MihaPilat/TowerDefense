@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3178d0eba5996b140b5032de954b1e42, type: 3}
   m_Name: Arrow1ProjectileConfig
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileConfig
-  <Speed>k__BackingField: 15
-  <Damage>k__BackingField: 20
-  <LifeTime>k__BackingField: 3
+  <Speed>k__BackingField: 25
   <_damageRadius>k__BackingField: 0
