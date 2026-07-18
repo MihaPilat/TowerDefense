@@ -18,6 +18,13 @@ public abstract class Projectile : MonoBehaviour, IProjectile
         if (target != null)
         {
             TargetPosition = target.Transform.position;
+
+            Vector3 direction = TargetPosition - transform.position;
+
+            if (direction.sqrMagnitude > 0.001f)
+            {
+                transform.rotation = Quaternion.LookRotation(direction);
+            }
         }
     }
 
@@ -34,6 +41,15 @@ public abstract class Projectile : MonoBehaviour, IProjectile
 
     private void Move()
     {
+        Vector3 direction = TargetPosition - transform.position;
+
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+
+            transform.rotation = lookRotation;
+        }
+
         transform.position = Vector3.MoveTowards(
         transform.position,
         TargetPosition,
