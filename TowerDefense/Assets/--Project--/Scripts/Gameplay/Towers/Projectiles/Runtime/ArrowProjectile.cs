@@ -18,7 +18,7 @@ public class ArrowProjectile : Projectile
     {
         if (_target != null)
         {
-            _target.TakeDamage(_config.Damage);
+            _target.TakeDamage(_damage);
         }
 
         ReturnToPool();

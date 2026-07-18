@@ -113,7 +113,7 @@ public class Tower : MonoBehaviour
         _projectileFactory.Spawn(
         _config.ProjectilePrefab,
         _firePoint.position,
-        _currentTarget);
+        _currentTarget, _config.Damage);
 
         _attackCooldownTimer = _config.AttackCooldown;
     }

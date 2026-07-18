@@ -8,13 +8,13 @@ public abstract class Projectile : MonoBehaviour, IProjectile
     protected PoolFactory _poolFactory;
     protected Projectile _prefab;
     protected Vector3 TargetPosition;
-
-    public virtual void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory)
+    protected int _damage;
+    public virtual void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory, int damage)
     {
         _target = target;
         _prefab = prefab;
         _poolFactory = poolFactory;
-
+        _damage = damage;
         if (target != null)
         {
             TargetPosition = target.Transform.position;
