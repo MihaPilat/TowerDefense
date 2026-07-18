@@ -27,14 +27,22 @@ public class Tower : MonoBehaviour
     {
         UpdateCooldown();
 
+        if (_currentTarget != null)
+        {
+            if (_currentTargetTransform == null ||
+                !_currentTargetTransform.gameObject.activeInHierarchy ||
+                !IsTargetValid(_currentTarget))
+            {
+                ResetTarget();
+            }
+        }
+
         if (_attackCooldownTimer > 0f)
         {
             return;
         }
 
-        if (_currentTargetTransform == null ||
-        !_currentTargetTransform.gameObject.activeInHierarchy ||
-        !IsTargetValid(_currentTarget))
+        if (_currentTarget == null)
         {
             FindTarget();
         }
@@ -43,6 +51,12 @@ public class Tower : MonoBehaviour
         {
             Attack(_currentTarget);
         }
+    }
+
+    private void ResetTarget()
+    {
+        _currentTarget = null;
+        _currentTargetTransform = null;
     }
 
     private void UpdateCooldown()
@@ -68,8 +82,7 @@ public class Tower : MonoBehaviour
 
     private void FindTarget()
     {
-        _currentTarget = null;
-        _currentTargetTransform = null;
+        ResetTarget();
 
         int count = Physics.OverlapSphereNonAlloc(
             transform.position,
