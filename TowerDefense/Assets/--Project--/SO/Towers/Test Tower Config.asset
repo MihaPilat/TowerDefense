@@ -17,3 +17,4 @@ MonoBehaviour:
   <Damage>k__BackingField: 10
   <AttackCooldown>k__BackingField: 1
   <AttackRange>k__BackingField: 10
+  <ProjectilePrefab>k__BackingField: {fileID: 1040843818862762829, guid: 96faf3103ad3fad4a9c4895c5f822559, type: 3}

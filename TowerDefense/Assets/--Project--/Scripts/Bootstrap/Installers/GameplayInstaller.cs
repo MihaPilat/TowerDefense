@@ -11,11 +11,19 @@ public class GameplayInstaller : MonoInstaller
     {
         BindTowerFactory();
         BindPoolFactory();
+        BindProjectileFactory();
         BindEnemyPath();
         BindMainCamera();
         BindBaseHealth();
         BindBuildService();
         BindBuildController();
+    }
+
+    private void BindProjectileFactory()
+    {
+        Container.BindInterfacesAndSelfTo<ProjectileFactory>()
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindBuildController()

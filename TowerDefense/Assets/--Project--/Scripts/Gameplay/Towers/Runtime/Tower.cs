@@ -1,17 +1,28 @@
 using UnityEngine;
+using Zenject;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private TowerConfig _towerConfig;
+    [SerializeField] private TowerConfig _config;
     [SerializeField] private LayerMask _enemyLayerMask;
+    [SerializeField] private Transform _firePoint;
 
     private IDamageable _currentTarget;
     private Transform _currentTargetTransform;
     private float _attackCooldownTimer;
 
+    private ProjectileFactory _projectileFactory;
+
     private readonly Collider[] _targetsBuffer = new Collider[30];
 
-    public TowerConfig Config => _towerConfig;
+    public TowerConfig Config => _config;
+
+    [Inject]
+    private void Construct(ProjectileFactory projectileFactory)
+    {
+        _projectileFactory = projectileFactory;
+    }
+
     private void Update()
     {
         UpdateCooldown();
@@ -47,7 +58,7 @@ public class Tower : MonoBehaviour
             return false;
 
         float sqrDistance = (transform.position - _currentTargetTransform.position).sqrMagnitude;
-        float sqrRange = _towerConfig.AttackRange * _towerConfig.AttackRange;
+        float sqrRange = _config.AttackRange * _config.AttackRange;
 
         return sqrDistance <= sqrRange;
     }
@@ -59,7 +70,7 @@ public class Tower : MonoBehaviour
 
         int count = Physics.OverlapSphereNonAlloc(
             transform.position,
-            _towerConfig.AttackRange,
+            _config.AttackRange,
             _targetsBuffer,
             _enemyLayerMask
         );
@@ -79,15 +90,18 @@ public class Tower : MonoBehaviour
 
     private void Attack(IDamageable target)
     {
-        target.TakeDamage(_towerConfig.Damage);
-        _attackCooldownTimer = _towerConfig.AttackCooldown;
-        Debug.Log($"Attacked enemy for {_towerConfig.Damage} damage!");
+        _projectileFactory.Spawn(
+        _config.ProjectilePrefab,
+        _firePoint.position,
+        _currentTarget);
+
+        _attackCooldownTimer = _config.AttackCooldown;
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (_towerConfig == null) return;
+        if (_config == null) return;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _towerConfig.AttackRange);
+        Gizmos.DrawWireSphere(transform.position, _config.AttackRange);
     }
 }
