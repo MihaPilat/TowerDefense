@@ -32,12 +32,14 @@ public class Tower : MonoBehaviour
             return;
         }
 
-        if (!IsTargetValid(_currentTarget))
+        if (_currentTargetTransform == null ||
+        !_currentTargetTransform.gameObject.activeInHierarchy ||
+        !IsTargetValid(_currentTarget))
         {
             FindTarget();
         }
 
-        if (_currentTarget != null)
+        if (_currentTarget != null && _currentTargetTransform != null && _currentTargetTransform.gameObject.activeInHierarchy)
         {
             Attack(_currentTarget);
         }
@@ -54,7 +56,8 @@ public class Tower : MonoBehaviour
     private bool IsTargetValid(IDamageable target)
     {
         if (target == null) return false;
-        if (_currentTargetTransform == null || !_currentTargetTransform.gameObject.activeSelf)
+
+        if (_currentTargetTransform == null || !_currentTargetTransform.gameObject.activeInHierarchy)
             return false;
 
         float sqrDistance = (transform.position - _currentTargetTransform.position).sqrMagnitude;
@@ -79,6 +82,10 @@ public class Tower : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             var enemyCollider = _targetsBuffer[i];
+
+            if (!enemyCollider.gameObject.activeInHierarchy)
+                continue;
+
             if (enemyCollider.TryGetComponent<IDamageable>(out var damageable))
             {
                 _currentTarget = damageable;

@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(_config.DeathDelay);
+        transform.position = new Vector3(-9999f, -9999f, -9999f);
         _originFactory.Reclaim(this, _originPrefab);
     }
 
