@@ -5,6 +5,7 @@ using Zenject;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    public event Action<int, DamageType> OnDamageTaken;
     public event Action<int, int> OnHealthChanged;
     public event Action OnDied;
 
@@ -45,32 +46,26 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     private void OnEnable()
     {
-
+        _health.OnDamageTaken += HandleDamageTaken;
         _health.OnHealthChanged += HealthChanged;
         _health.OnDied += Died;
     }
 
     private void OnDisable()
     {
-
+        _health.OnDamageTaken -= HandleDamageTaken;
         _health.OnHealthChanged -= HealthChanged;
         _health.OnDied -= Died;
     }
 
-    public void TakeDamage(DamageInfo damageInfo)
-    {
-        _health.TakeDamage(damageInfo);
-    }
+    public void TakeDamage(DamageInfo damageInfo) => _health.TakeDamage(damageInfo);
 
-    public void ReclaimInPool()
-    {
-        StartCoroutine(DeathCoroutine());
-    }
+    public void ReclaimInPool() => StartCoroutine(DeathCoroutine());
 
-    private void HealthChanged(int current, int max)
-    {
-        OnHealthChanged?.Invoke(current, max);
-    }
+
+    private void HandleDamageTaken(int finalDamage, DamageType damageType) => OnDamageTaken(finalDamage, damageType);
+
+    private void HealthChanged(int current, int max) => OnHealthChanged?.Invoke(current, max);
 
     private void Died()
     {
