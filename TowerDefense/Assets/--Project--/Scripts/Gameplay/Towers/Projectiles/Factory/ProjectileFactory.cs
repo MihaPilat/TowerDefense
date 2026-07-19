@@ -11,13 +11,13 @@ public class ProjectileFactory
         _poolFactory = poolFactory;
     }
 
-    public IProjectile Spawn(Projectile prefab, Vector3 position, IDamageable target, int damage)
+    public IProjectile Spawn(Projectile prefab, Vector3 position, IDamageable target, DamageInfo damageInfo)
     {
         Projectile projectile = _poolFactory.Get(prefab);
 
         projectile.transform.position = position;
 
-        projectile.Init(target, prefab, _poolFactory, damage);
+        projectile.Init(target, prefab, _poolFactory, damageInfo);
 
         return projectile;
     }

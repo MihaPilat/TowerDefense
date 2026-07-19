@@ -19,12 +19,12 @@ public class EnemyHealth
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(DamageInfo damageInfo)
     {
         if (CurrentHealth <= 0)
             return;
 
-        CurrentHealth -= damage;
+        CurrentHealth -= damageInfo.Damage;
 
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
 

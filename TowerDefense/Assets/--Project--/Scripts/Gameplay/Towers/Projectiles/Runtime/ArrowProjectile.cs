@@ -7,7 +7,7 @@ public class ArrowProjectile : Projectile
     {
         if (_target != null && _target.Transform != null && _target.Transform.gameObject.activeInHierarchy)
         {
-            TargetPosition = _target.Transform.position;
+            _targetPosition = _target.Transform.position;
         }
         else
         {
@@ -18,7 +18,7 @@ public class ArrowProjectile : Projectile
     {
         if (_target != null)
         {
-            _target.TakeDamage(_damage);
+            _target.TakeDamage(_damageInfo);
         }
 
         ReturnToPool();

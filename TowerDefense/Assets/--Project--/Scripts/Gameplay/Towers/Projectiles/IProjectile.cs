@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IProjectile
 {
-    void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory, int damage);
+    void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory, DamageInfo damageInfo);
 }

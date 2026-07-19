@@ -7,19 +7,21 @@ public abstract class Projectile : MonoBehaviour, IProjectile
     protected IDamageable _target;
     protected PoolFactory _poolFactory;
     protected Projectile _prefab;
-    protected Vector3 TargetPosition;
-    protected int _damage;
-    public virtual void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory, int damage)
+    protected Vector3 _targetPosition;
+    protected DamageInfo _damageInfo;
+
+    public virtual void Init(IDamageable target, Projectile prefab, PoolFactory poolFactory, DamageInfo damageInfo)
     {
         _target = target;
         _prefab = prefab;
         _poolFactory = poolFactory;
-        _damage = damage;
+        _damageInfo = damageInfo;
+
         if (target != null)
         {
-            TargetPosition = target.Transform.position;
+            _targetPosition = target.Transform.position;
 
-            Vector3 direction = TargetPosition - transform.position;
+            Vector3 direction = _targetPosition - transform.position;
 
             if (direction.sqrMagnitude > 0.001f)
             {
@@ -41,7 +43,7 @@ public abstract class Projectile : MonoBehaviour, IProjectile
 
     private void Move()
     {
-        Vector3 direction = TargetPosition - transform.position;
+        Vector3 direction = _targetPosition - transform.position;
 
         if (direction.sqrMagnitude > 0.001f)
         {
@@ -52,13 +54,13 @@ public abstract class Projectile : MonoBehaviour, IProjectile
 
         transform.position = Vector3.MoveTowards(
         transform.position,
-        TargetPosition,
+        _targetPosition,
         _config.Speed * Time.deltaTime);
     }
 
     private void CheckImpact()
     {
-        if ((transform.position - TargetPosition).sqrMagnitude < 0.01f)
+        if ((transform.position - _targetPosition).sqrMagnitude < 0.01f)
         {
             Impact();
         }

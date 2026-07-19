@@ -57,17 +57,9 @@ public class Enemy : MonoBehaviour, IDamageable
         _health.OnDied -= Died;
     }
 
-    private void Update()
+    public void TakeDamage(DamageInfo damageInfo)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-        }
-    }
-    public void TakeDamage(int damage)
-    {
-        Debug.Log($"take {damage} damage");
-        _health.TakeDamage(damage);
+        _health.TakeDamage(damageInfo);
     }
 
     public void ReclaimInPool()

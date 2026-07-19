@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour
     private IDamageable _currentTarget;
     private Transform _currentTargetTransform;
     private float _attackCooldownTimer;
+    private int _finalDamage;
 
     private ProjectileFactory _projectileFactory;
 
@@ -110,10 +111,13 @@ public class Tower : MonoBehaviour
 
     private void Attack(IDamageable target)
     {
+        _finalDamage = _config.Damage;
+        DamageInfo damageInfo = new DamageInfo(_finalDamage, _config.DamageType);
+
         _projectileFactory.Spawn(
         _config.ProjectilePrefab,
         _firePoint.position,
-        _currentTarget, _config.Damage);
+        _currentTarget, damageInfo);
 
         _attackCooldownTimer = _config.AttackCooldown;
     }
