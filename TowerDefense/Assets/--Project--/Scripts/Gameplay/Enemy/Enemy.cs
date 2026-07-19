@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     private void Awake()
     {
-        _health = new EnemyHealth(_config.MaxHealth);
+        _health = new EnemyHealth(_config.MaxHealth, _config.ResistanceConfig);
     }
     private void OnEnable()
     {

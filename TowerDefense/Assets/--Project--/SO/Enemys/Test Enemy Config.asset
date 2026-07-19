@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Test Enemy Config
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
   <MaxHealth>k__BackingField: 50
+  <ResistanceConfig>k__BackingField:
+    PhysicalResistance: 0
+    MagicalResistance: 0
   <Speed>k__BackingField: 10
   <Damage>k__BackingField: 10
   <RewardGold>k__BackingField: 20
