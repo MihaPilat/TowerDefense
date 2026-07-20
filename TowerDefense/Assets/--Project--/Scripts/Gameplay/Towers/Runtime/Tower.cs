@@ -13,7 +13,6 @@ public class Tower : MonoBehaviour
     private IDamageable _currentTarget;
     private Transform _currentTargetTransform;
     private float _attackCooldownTimer;
-    private int _finalDamage;
 
     private ProjectileFactory _projectileFactory;
 
@@ -21,6 +20,7 @@ public class Tower : MonoBehaviour
 
     private int _level;
 
+    public int FinalDamage => CurrentLevel.Damage;
     public TowerConfig Config => _config;
 
     public int Level => _level;
@@ -134,8 +134,7 @@ public class Tower : MonoBehaviour
 
     private void Attack(IDamageable target)
     {
-        _finalDamage = CurrentLevel.Damage;
-        DamageInfo damageInfo = new DamageInfo(_finalDamage, _config.DamageType);
+        DamageInfo damageInfo = new DamageInfo(FinalDamage, _config.DamageType);
 
         _projectileFactory.Spawn(
         _config.ProjectilePrefab,
