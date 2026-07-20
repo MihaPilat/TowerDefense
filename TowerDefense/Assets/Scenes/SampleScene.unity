@@ -4747,6 +4747,7 @@ MonoBehaviour:
     m_Bits: 128
   _availableTowersPrefabsList:
   - {fileID: 3426095199659940897, guid: f0962856ca6854449b0b0ebdd2f4786f, type: 3}
+  - {fileID: 3919506615057627290, guid: 512bc6d89fd0f7740b03a63fc9cacf14, type: 3}
 --- !u!4 &1638768084
 Transform:
   m_ObjectHideFlags: 0
