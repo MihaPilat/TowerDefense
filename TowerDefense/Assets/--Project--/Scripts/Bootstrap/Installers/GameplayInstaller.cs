@@ -13,6 +13,8 @@ public class GameplayInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        BindCurrencyService();
+        BindTowerUpgradeService();
         BindTowerFactory();
         BindPoolFactory();
         BindProjectileFactory();
@@ -22,6 +24,36 @@ public class GameplayInstaller : MonoInstaller
         BindBuildMenuUI();
         BindBuildService();
         BindBuildController();
+        BindTowerMenuUI();
+        BindTowerSelectionController();
+    }
+
+    private void BindTowerMenuUI()
+    {
+        Container.Bind<TowerMenuUI>()
+            .FromComponentInHierarchy()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindTowerSelectionController()
+    {
+        Container.BindInterfacesTo<TowerSelectionController>()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindCurrencyService()
+    {
+        Container.Bind<CurrencyService>()
+            .AsSingle()
+            .NonLazy();
+    }
+    private void BindTowerUpgradeService()
+    {
+        Container.Bind<TowerUpgradeService>()
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindBuildMenuUI()

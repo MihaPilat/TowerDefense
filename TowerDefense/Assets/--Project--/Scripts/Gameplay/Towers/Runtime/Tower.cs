@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using Zenject;
 
 public class Tower : MonoBehaviour
 {
+    public event Action OnLvlUp;
+
     [SerializeField] private TowerConfig _config;
     [SerializeField] private LayerMask _enemyLayerMask;
     [SerializeField] private Transform _firePoint;
@@ -16,7 +19,17 @@ public class Tower : MonoBehaviour
 
     private readonly Collider[] _targetsBuffer = new Collider[30];
 
+    private int _level;
+
     public TowerConfig Config => _config;
+
+    public int Level => _level;
+
+    public TowerLevelData CurrentLevel => _config.Levels[_level];
+
+    public bool CanUpgrade => _level < _config.Levels.Count - 1;
+
+    public int NextUpgradeCost => CanUpgrade ? _config.Levels[_level + 1].UpgradeCost : 0;
 
     [Inject]
     private void Construct(ProjectileFactory projectileFactory)
@@ -54,6 +67,16 @@ public class Tower : MonoBehaviour
         }
     }
 
+    public void LevelUp()
+    {
+        OnLvlUp?.Invoke();
+
+        if (!CanUpgrade)
+            return;
+
+        _level++;
+    }
+
     private void ResetTarget()
     {
         _currentTarget = null;
@@ -76,7 +99,7 @@ public class Tower : MonoBehaviour
             return false;
 
         float sqrDistance = (transform.position - _currentTargetTransform.position).sqrMagnitude;
-        float sqrRange = _config.AttackRange * _config.AttackRange;
+        float sqrRange = CurrentLevel.AttackRange * CurrentLevel.AttackRange;
 
         return sqrDistance <= sqrRange;
     }
@@ -87,7 +110,7 @@ public class Tower : MonoBehaviour
 
         int count = Physics.OverlapSphereNonAlloc(
             transform.position,
-            _config.AttackRange,
+            CurrentLevel.AttackRange,
             _targetsBuffer,
             _enemyLayerMask
         );
@@ -111,7 +134,7 @@ public class Tower : MonoBehaviour
 
     private void Attack(IDamageable target)
     {
-        _finalDamage = _config.Damage;
+        _finalDamage = CurrentLevel.Damage;
         DamageInfo damageInfo = new DamageInfo(_finalDamage, _config.DamageType);
 
         _projectileFactory.Spawn(
@@ -119,13 +142,13 @@ public class Tower : MonoBehaviour
         _firePoint.position,
         _currentTarget, damageInfo);
 
-        _attackCooldownTimer = _config.AttackCooldown;
+        _attackCooldownTimer = CurrentLevel.AttackCooldown;
     }
 
     private void OnDrawGizmosSelected()
     {
         if (_config == null) return;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _config.AttackRange);
+        Gizmos.DrawWireSphere(transform.position, CurrentLevel.AttackRange);
     }
 }

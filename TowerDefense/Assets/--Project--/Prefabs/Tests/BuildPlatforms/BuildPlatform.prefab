@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildPlatform
   _highlightVisual: {fileID: 8361804583985729506}
+  _platformView: {fileID: 0}
 --- !u!1 &8361804583985729506
 GameObject:
   m_ObjectHideFlags: 0
