@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a561ed2f8950de64784f1767af2b0edc, type: 3}
+  m_Name: Test Enemy Config 2
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
+  <MaxHealth>k__BackingField: 50
+  <ResistanceConfig>k__BackingField:
+    PhysicalResistance: 0
+    MagicalResistance: 0
+  <Speed>k__BackingField: 10
+  <Damage>k__BackingField: 10
+  <RewardGold>k__BackingField: 20
+  <DeathDelay>k__BackingField: 0.4
