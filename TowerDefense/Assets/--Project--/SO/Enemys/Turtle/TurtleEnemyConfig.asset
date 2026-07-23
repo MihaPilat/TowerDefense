@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a561ed2f8950de64784f1767af2b0edc, type: 3}
-  m_Name: Test Enemy Config 1
+  m_Name: TurtleEnemyConfig
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
-  <MaxHealth>k__BackingField: 100
+  <MaxHealth>k__BackingField: 60
   <ResistanceConfig>k__BackingField:
-    PhysicalResistance: 0.23
-    MagicalResistance: 0.23
-  <Speed>k__BackingField: 8
+    PhysicalResistance: 0.33
+    MagicalResistance: 0
+  <Speed>k__BackingField: 3
   <Damage>k__BackingField: 10
-  <RewardGold>k__BackingField: 40
+  <RewardGold>k__BackingField: 4
   <DeathDelay>k__BackingField: 2
