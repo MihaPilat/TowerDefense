@@ -14,7 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WavesConfig
   Waves:
   - Enemies:
+    - Prefab: {fileID: 1413444456702000490, guid: 8f2fdff37f5c1cf4a8389f84fb346d92, type: 3}
+      Count: 6
     - Prefab: {fileID: 3021642063599503649, guid: cc0dc66a184d501419b27e41b20fc258, type: 3}
-      Count: 15
+      Count: 6
+    SpawnDelay: 1
+    DelayBeforeNextWave: 5
+  - Enemies:
+    - Prefab: {fileID: 1413444456702000490, guid: 8f2fdff37f5c1cf4a8389f84fb346d92, type: 3}
+      Count: 8
+    - Prefab: {fileID: 3021642063599503649, guid: cc0dc66a184d501419b27e41b20fc258, type: 3}
+      Count: 8
+    SpawnDelay: 1
+    DelayBeforeNextWave: 5
+  - Enemies:
+    - Prefab: {fileID: 1413444456702000490, guid: 8f2fdff37f5c1cf4a8389f84fb346d92, type: 3}
+      Count: 8
+    - Prefab: {fileID: 3021642063599503649, guid: cc0dc66a184d501419b27e41b20fc258, type: 3}
+      Count: 8
     SpawnDelay: 1
     DelayBeforeNextWave: 5
