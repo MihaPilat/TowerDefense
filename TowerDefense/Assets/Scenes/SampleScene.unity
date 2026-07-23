@@ -5576,7 +5576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbf8017b949db44389ddb7faeb6acc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BootstrapTest
-  _startGold: 30
+  _startGold: 60
 --- !u!4 &1714075236
 Transform:
   m_ObjectHideFlags: 0
