@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Zenject;
 
+[RequireComponent(typeof(Collider))]
 public class Enemy : MonoBehaviour, IDamageable
 {
     public event Action<int, DamageType> OnDamageTaken;
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour, IDamageable
     private Enemy _originPrefab;
     private CurrencyService _currencyService;
     private WaveService _waveService;
+
+    private Collider _collider;
 
     private bool _isDie;
 
@@ -39,6 +42,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
         _isDie = false;
 
+        if (_collider != null)
+            _collider.enabled = true;
+
         _health.Init();
         _mover.Init();
         _view.Init();
@@ -46,6 +52,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void Awake()
     {
         _health = new EnemyHealth(_config.MaxHealth, _config.ResistanceConfig);
+        _collider = GetComponent<Collider>();
     }
     private void OnEnable()
     {
@@ -68,6 +75,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (_isDie) return;
         _isDie = true;
 
+        DisableCollider();
         _waveService.EnemyKilled();
         ReturnToPool();
     }
@@ -82,11 +90,19 @@ public class Enemy : MonoBehaviour, IDamageable
             return;
         _isDie = true;
 
+        DisableCollider();
+
         _currencyService.AddGold(_config.RewardGold);
 
         OnDied?.Invoke();
 
         StartCoroutine(DeathCoroutine());
+    }
+
+    private void DisableCollider()
+    {
+        if (_collider != null)
+            _collider.enabled = false;
     }
 
     private IEnumerator DeathCoroutine()
