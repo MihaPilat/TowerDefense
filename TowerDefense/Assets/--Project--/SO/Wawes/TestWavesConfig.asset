@@ -19,14 +19,14 @@ MonoBehaviour:
     - Prefab: {fileID: 3933565618769349062, guid: 01518c6217931c449bf3a56eac6e933b, type: 3}
       Count: 6
     SpawnDelay: 0.5
-    DelayBeforeNextWave: 15
+    DelayBeforeNextWave: 5
   - Enemies:
     - Prefab: {fileID: 3933565618769349062, guid: ba94dd92473bc104e963f8abc041aae5, type: 3}
       Count: 6
     - Prefab: {fileID: 3933565618769349062, guid: 69080574cd3b00a4082034b54fa8ba8b, type: 3}
       Count: 6
     SpawnDelay: 0.5
-    DelayBeforeNextWave: 15
+    DelayBeforeNextWave: 5
   - Enemies:
     - Prefab: {fileID: 3933565618769349062, guid: 69080574cd3b00a4082034b54fa8ba8b, type: 3}
       Count: 10
@@ -35,7 +35,7 @@ MonoBehaviour:
     - Prefab: {fileID: 3933565618769349062, guid: 69080574cd3b00a4082034b54fa8ba8b, type: 3}
       Count: 6
     SpawnDelay: 0.5
-    DelayBeforeNextWave: 15
+    DelayBeforeNextWave: 5
   - Enemies:
     - Prefab: {fileID: 3933565618769349062, guid: 69080574cd3b00a4082034b54fa8ba8b, type: 3}
       Count: 15
@@ -44,4 +44,4 @@ MonoBehaviour:
     - Prefab: {fileID: 3933565618769349062, guid: 69080574cd3b00a4082034b54fa8ba8b, type: 3}
       Count: 6
     SpawnDelay: 0.5
-    DelayBeforeNextWave: 15
+    DelayBeforeNextWave: 5
