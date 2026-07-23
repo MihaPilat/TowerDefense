@@ -10,8 +10,8 @@ public class Tower : MonoBehaviour
     [SerializeField] private LayerMask _enemyLayerMask;
     [SerializeField] private Transform _firePoint;
 
-    private IDamageable _currentTarget;
-    private Transform _currentTargetTransform;
+    private Enemy _currentTargetEnemy;
+    private IDamageable _currentTargetDamageable;
     private float _attackCooldownTimer;
 
     private ProjectileFactory _projectileFactory;
@@ -41,46 +41,36 @@ public class Tower : MonoBehaviour
     {
         UpdateCooldown();
 
-        if (_currentTarget != null)
+        if (!IsTargetValid(_currentTargetEnemy))
         {
-            if (_currentTargetTransform == null ||
-                !_currentTargetTransform.gameObject.activeInHierarchy ||
-                !IsTargetValid(_currentTarget))
-            {
-                ResetTarget();
-            }
+            ResetTarget();
         }
 
-        if (_attackCooldownTimer > 0f)
-        {
-            return;
-        }
-
-        if (_currentTarget == null)
+        if (_currentTargetEnemy == null)
         {
             FindTarget();
         }
 
-        if (_currentTarget != null && _currentTargetTransform != null && _currentTargetTransform.gameObject.activeInHierarchy)
+        if (_currentTargetEnemy != null && _attackCooldownTimer <= 0f)
         {
-            Attack(_currentTarget);
+            Attack(_currentTargetDamageable);
         }
     }
 
     public void LevelUp()
     {
-        OnLvlUp?.Invoke();
-
         if (!CanUpgrade)
             return;
 
         _level++;
+
+        OnLvlUp?.Invoke();
     }
 
     private void ResetTarget()
     {
-        _currentTarget = null;
-        _currentTargetTransform = null;
+        _currentTargetEnemy = null;
+        _currentTargetDamageable = null;
     }
 
     private void UpdateCooldown()
@@ -91,14 +81,15 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private bool IsTargetValid(IDamageable target)
+    private bool IsTargetValid(Enemy enemy)
     {
-        if (target == null) return false;
-
-        if (_currentTargetTransform == null || !_currentTargetTransform.gameObject.activeInHierarchy)
+        if(enemy == null || !enemy.gameObject.activeInHierarchy)
             return false;
 
-        float sqrDistance = (transform.position - _currentTargetTransform.position).sqrMagnitude;
+        if (enemy.IsDie)
+            return false;
+
+        float sqrDistance = (transform.position - enemy.transform.position).sqrMagnitude;
         float sqrRange = CurrentLevel.AttackRange * CurrentLevel.AttackRange;
 
         return sqrDistance <= sqrRange;
@@ -106,8 +97,6 @@ public class Tower : MonoBehaviour
 
     private void FindTarget()
     {
-        ResetTarget();
-
         int count = Physics.OverlapSphereNonAlloc(
             transform.position,
             CurrentLevel.AttackRange,
@@ -115,19 +104,21 @@ public class Tower : MonoBehaviour
             _enemyLayerMask
         );
 
-        Debug.Log($"enemys in radius: {count}");
         for (int i = 0; i < count; i++)
         {
             var enemyCollider = _targetsBuffer[i];
 
-            if (!enemyCollider.gameObject.activeInHierarchy)
+            if (enemyCollider == null || !enemyCollider.gameObject.activeInHierarchy)
                 continue;
 
-            if (enemyCollider.TryGetComponent<IDamageable>(out var damageable))
+            if (enemyCollider.TryGetComponent<Enemy>(out var enemy))
             {
-                _currentTarget = damageable;
-                _currentTargetTransform = enemyCollider.transform;
-                break;
+                if (IsTargetValid(enemy))
+                {
+                    _currentTargetEnemy = enemy;
+                    _currentTargetDamageable = enemy;
+                    break;
+                }
             }
         }
     }
@@ -139,7 +130,7 @@ public class Tower : MonoBehaviour
         _projectileFactory.Spawn(
         _config.ProjectilePrefab,
         _firePoint.position,
-        _currentTarget, damageInfo);
+        _currentTargetEnemy, damageInfo);
 
         _attackCooldownTimer = CurrentLevel.AttackCooldown;
     }
