@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private PoolFactory _originFactory;
     private Enemy _originPrefab;
     private CurrencyService _currencyService;
+    private WaveService _waveService;
 
     private bool _isDie;
 
@@ -24,10 +25,10 @@ public class Enemy : MonoBehaviour, IDamageable
     public EnemyConfig Config => _config;
 
     [Inject]
-    public void Construct(
-        CurrencyService currencyService)
+    public void Construct(CurrencyService currencyService, WaveService waveService)
     {
         _currencyService = currencyService;
+        _waveService = waveService;
     }
 
     public void Init(Enemy prefab, PoolFactory factory)
@@ -83,6 +84,9 @@ public class Enemy : MonoBehaviour, IDamageable
     private IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(_config.DeathDelay);
+
+        _waveService.EnemyKilled();
+
         transform.position = new Vector3(-9999f, -9999f, -9999f);
         _originFactory.Reclaim(this, _originPrefab);
     }

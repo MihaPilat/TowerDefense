@@ -8,10 +8,13 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
 
     private PoolFactory _poolFactory;
+    private WaveService _waveService;
+
     [Inject]
-    private void Construct(PoolFactory poolFactory)
+    private void Construct(PoolFactory poolFactory, WaveService waveService)
     {
         _poolFactory = poolFactory;
+        _waveService = waveService;
     }
 
     private void Start()
@@ -21,13 +24,23 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator WavesRoutine()
     {
-        foreach (WaveData wave in _wavesConfig.Waves)
+        for (int i = 0; i < _wavesConfig.Waves.Count; i++)
         {
+            WaveData wave = _wavesConfig.Waves[i];
+
+            _waveService.StartWave(
+                i + 1,
+                GetEnemiesCount(wave));
+
             yield return SpawnWave(wave);
+
+            yield return new WaitUntil(() =>
+                _waveService.IsWaveCompleted);
 
             yield return new WaitForSeconds(
                 wave.DelayBeforeNextWave);
         }
+
 
         Debug.Log("All waves completed");
     }
@@ -44,6 +57,18 @@ public class WaveSpawner : MonoBehaviour
                     wave.SpawnDelay);
             }
         }
+    }
+
+    private int GetEnemiesCount(WaveData wave)
+    {
+        int count = 0;
+
+        foreach (WaveEnemyData enemy in wave.Enemies)
+        {
+            count += enemy.Count;
+        }
+
+        return count;
     }
 
     private void SpawnEnemy(Enemy enemyPrefab)

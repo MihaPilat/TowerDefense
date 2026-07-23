@@ -13,6 +13,7 @@ public class GameplayInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        BindWaveService();
         BindCurrencyService();
         BindTowerUpgradeService();
         BindTowerFactory();
@@ -26,6 +27,13 @@ public class GameplayInstaller : MonoInstaller
         BindBuildController();
         BindTowerMenuUI();
         BindTowerSelectionController();
+    }
+
+    private void BindWaveService()
+    {
+        Container.Bind<WaveService>()
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindTowerMenuUI()
