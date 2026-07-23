@@ -18,13 +18,13 @@ public class EnemyView : MonoBehaviour
 
     private void OnEnable()
     {
-        _enemy.OnDamageTaken += HandleDamageTaken;
+        //_enemy.OnDamageTaken += HandleDamageTaken;
         _enemy.OnDied += HandleDied;
     }
 
     private void OnDisable()
     {
-        _enemy.OnDamageTaken -= HandleDamageTaken;
+        //_enemy.OnDamageTaken -= HandleDamageTaken;
         _enemy.OnDied -= HandleDied;
     }
 
