@@ -75,10 +75,27 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _enemy.OnDied += StopMovement;
+    }
+
     private void OnDisable()
     {
+        _enemy.OnDied -= StopMovement;
+
         if (_agent != null && _agent.enabled)
             _agent.enabled = false;
+    }
+
+    private void StopMovement()
+    {
+        if (_agent.isActiveAndEnabled)
+        {
+            _agent.isStopped = true;
+            _agent.velocity = Vector3.zero;
+            _agent.enabled = false;
+        }
     }
 
     private void SetNextDestination()
