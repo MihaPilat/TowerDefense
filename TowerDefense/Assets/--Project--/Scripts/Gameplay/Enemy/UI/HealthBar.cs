@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private UIDamagePopup _popupPrefab;
     [SerializeField] private Transform _popupContainer;
+    [SerializeField] private Image _background;
 
     private Image _fill;
     private Enemy _enemy;
@@ -30,16 +31,32 @@ public class HealthBar : MonoBehaviour
     {
         _enemy.OnHealthChanged += SetValue;
         _enemy.OnDamageTaken += HandleDamageTaken;
+        _enemy.OnDied += Hide;
     }
 
     private void OnDisable()
     {
         _enemy.OnHealthChanged -= SetValue;
         _enemy.OnDamageTaken-= HandleDamageTaken;
+        _enemy.OnDied -= Hide;
+    }
+
+    private void Hide()
+    {
+        _fill.enabled = false;
+        _background.enabled = false;
+    }
+
+    private void Show()
+    {
+        _fill.enabled = true;
+        _background.enabled = true;
     }
 
     private void HandleDamageTaken(int finalDamage, DamageType damageType)
     {
+        if (_enemy.IsDie) return;
+
         Color damageColor = damageType switch
         {
             DamageType.Physical => Color.red,
@@ -64,6 +81,11 @@ public class HealthBar : MonoBehaviour
 
     private void SetValue(int current, int max)
     {
+        if (!_enemy.IsDie && !_fill.enabled)
+        {
+            Show();
+        }
+
         _fill.fillAmount = (float)current / (float)max;
     }
 }
