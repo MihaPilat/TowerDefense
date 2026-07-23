@@ -16,7 +16,7 @@ MonoBehaviour:
   <ResistanceConfig>k__BackingField:
     PhysicalResistance: 0
     MagicalResistance: 0
-  <Speed>k__BackingField: 8
+  <Speed>k__BackingField: 4
   <Damage>k__BackingField: 10
   <RewardGold>k__BackingField: 2
-  <DeathDelay>k__BackingField: 0.4
+  <DeathDelay>k__BackingField: 1

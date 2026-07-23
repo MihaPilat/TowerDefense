@@ -19,13 +19,13 @@ MonoBehaviour:
   - UpgradeCost: 15
     Damage: 15
     AttackRange: 12
-    AttackCooldown: 0.4
+    AttackCooldown: 1
   - UpgradeCost: 33
     Damage: 25
     AttackRange: 14
-    AttackCooldown: 0.4
+    AttackCooldown: 0.9
   - UpgradeCost: 44
     Damage: 33
     AttackRange: 16
-    AttackCooldown: 0.2
+    AttackCooldown: 0.8
   <ProjectilePrefab>k__BackingField: {fileID: 1040843818862762829, guid: 96faf3103ad3fad4a9c4895c5f822559, type: 3}

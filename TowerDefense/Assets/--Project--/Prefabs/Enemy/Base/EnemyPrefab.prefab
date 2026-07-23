@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4286101070826893748}
   - component: {fileID: 3484145371183843047}
   - component: {fileID: 4213070470294339822}
-  m_Layer: 0
+  - component: {fileID: 7790871902634409863}
+  m_Layer: 6
   m_Name: EnemyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _config: {fileID: 0}
   _mover: {fileID: 4213070470294339822}
+  _view: {fileID: 5607013668008420652}
 --- !u!195 &3484145371183843047
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -83,6 +85,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db015a9a05829342998a2d07504b729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMover
+--- !u!136 &7790871902634409863
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174917919001326744}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4210914571298279145
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403404672128834628}
   - component: {fileID: 5607013668008420652}
+  - component: {fileID: 3269282517610402245}
   m_Layer: 0
   m_Name: EnemyView
   m_TagString: Untagged
@@ -127,3 +153,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb9c56987bc7c04db31e83981dee3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyView
+--- !u!95 &3269282517610402245
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210914571298279145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

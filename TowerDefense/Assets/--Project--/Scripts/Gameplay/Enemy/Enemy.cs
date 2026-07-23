@@ -11,8 +11,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField] private EnemyConfig _config;
     [SerializeField] private EnemyMover _mover;
-    private EnemyHealth _health;
+    [SerializeField] private EnemyView _view;
 
+    private EnemyHealth _health;
     private PoolFactory _originFactory;
     private Enemy _originPrefab;
     private CurrencyService _currencyService;
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         _health.Init();
         _mover.Init();
+        _view.Init();
     }
     private void Awake()
     {
@@ -61,10 +63,16 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(DamageInfo damageInfo) => _health.TakeDamage(damageInfo);
 
-    public void ReclaimInPool() => StartCoroutine(DeathCoroutine());
+    public void ReclaimInPool()
+    {
+        if (_isDie) return;
+        _isDie = true;
 
+        _waveService.EnemyKilled();
+        ReturnToPool();
+    }
 
-    private void HandleDamageTaken(int finalDamage, DamageType damageType) => OnDamageTaken(finalDamage, damageType);
+    private void HandleDamageTaken(int finalDamage, DamageType damageType) => OnDamageTaken?.Invoke(finalDamage, damageType);
 
     private void HealthChanged(int current, int max) => OnHealthChanged?.Invoke(current, max);
 
@@ -87,8 +95,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
         _waveService.EnemyKilled();
 
+        ReturnToPool();
+    }
+
+    private void ReturnToPool()
+    {
         transform.position = new Vector3(-9999f, -9999f, -9999f);
         _originFactory.Reclaim(this, _originPrefab);
     }
-
 }
