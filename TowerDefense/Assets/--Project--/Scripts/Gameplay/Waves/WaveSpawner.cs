@@ -28,21 +28,30 @@ public class WaveSpawner : MonoBehaviour
         {
             WaveData wave = _wavesConfig.Waves[i];
 
+            yield return StartWaveDelayTimer(wave.DelayBeforeNextWave);
+
             _waveService.StartWave(
                 i + 1,
                 GetEnemiesCount(wave));
 
             yield return SpawnWave(wave);
 
-            yield return new WaitUntil(() =>
-                _waveService.IsWaveCompleted);
-
-            yield return new WaitForSeconds(
-                wave.DelayBeforeNextWave);
+            yield return new WaitUntil(() => _waveService.IsWaveCompleted);
         }
 
-
         Debug.Log("All waves completed");
+    }
+
+    private IEnumerator StartWaveDelayTimer(float delay)
+    {
+        float timer = delay;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            _waveService.UpdateTimer(Mathf.Max(0, timer));
+            yield return null;
+        }
     }
 
     private IEnumerator SpawnWave(WaveData wave)

@@ -2,6 +2,8 @@ using System;
 
 public class WaveService
 {
+    public event Action OnWaveStarted;
+    public event Action<float> OnTimerUpdated;
     public event Action<int> WaveChanged;
     public event Action<int> RemainingEnemiesChanged;
     public event Action WaveCompleted;
@@ -18,8 +20,14 @@ public class WaveService
         CurrentWave = waveNumber;
         RemainingEnemies = enemiesCount;
 
+        OnWaveStarted?.Invoke();
         WaveChanged?.Invoke(CurrentWave);
         RemainingEnemiesChanged?.Invoke(RemainingEnemies);
+    }
+
+    public void UpdateTimer(float timeRemaining)
+    {
+        OnTimerUpdated?.Invoke(timeRemaining);
     }
 
     public void EnemyKilled()
