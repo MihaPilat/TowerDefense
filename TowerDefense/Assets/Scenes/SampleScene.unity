@@ -858,8 +858,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveTimerUI
   _timerText: {fileID: 108217531}
   _timerCanvasGroup: {fileID: 1270853777}
-  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _normalColor: {r: 0, g: 0, b: 0, a: 1}
   _warningColor: {r: 1, g: 0, b: 0, a: 1}
   _punchStrength: 0.3
   _animationDuration: 0.25
@@ -1494,7 +1494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ace22ef71795214478072e8b5cf58674, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d9089e19f0dddc4ab258de7554cef87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5787,6 +5787,7 @@ MonoBehaviour:
   _availableTowersPrefabsList:
   - {fileID: 3426095199659940897, guid: f0962856ca6854449b0b0ebdd2f4786f, type: 3}
   - {fileID: 3919506615057627290, guid: 512bc6d89fd0f7740b03a63fc9cacf14, type: 3}
+  - {fileID: 4786355306076236974, guid: e95aae0215cb78c4aaff4cb7019627c7, type: 3}
 --- !u!4 &1638768084
 Transform:
   m_ObjectHideFlags: 0
@@ -5893,7 +5894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbf8017b949db44389ddb7faeb6acc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BootstrapTest
-  _startGold: 60
+  _startGold: 4444
 --- !u!4 &1714075236
 Transform:
   m_ObjectHideFlags: 0
@@ -6217,8 +6218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35.160706, y: 0}
-  m_SizeDelta: {x: 70.32141, y: 0}
+  m_AnchoredPosition: {x: 40.2359, y: 0}
+  m_SizeDelta: {x: 80.4718, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792054197
 MonoBehaviour:
