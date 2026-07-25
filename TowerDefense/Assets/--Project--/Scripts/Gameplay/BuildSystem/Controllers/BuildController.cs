@@ -33,6 +33,13 @@ public class BuildController : ITickable
 
     private void HandleHover()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            ResetLastHover();
+            _lastHitCollider = null;
+            return;
+        }
+
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _platformLayerMask))

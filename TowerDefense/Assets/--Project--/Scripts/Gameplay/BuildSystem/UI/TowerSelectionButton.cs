@@ -54,6 +54,12 @@ public class TowerSelectionButton : MonoBehaviour
 
     private void SelectAndBuild()
     {
+        bool success = _buildService.BuildTowerDirectly(_towerPrefab, _targetPlatform);
+        if (success)
+        {
+            _targetPlatform.ToggleHighlight(false);
+        }
+
         _buildService.BuildTowerDirectly(_towerPrefab, _targetPlatform);
     }
 }
