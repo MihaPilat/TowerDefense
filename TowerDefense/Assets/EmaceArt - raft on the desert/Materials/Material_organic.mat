@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_organic
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 644f74e156ed71f4bae123f8d7e29d80, type: 2}
+  m_Parent: {fileID: 2100000, guid: 75654be33d94939479c6baa98885a9a0, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -27,7 +27,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats: []
-    m_Colors: []
+    m_Colors:
+    - _BaseColor: {r: 0.30593583, g: 0.509434, b: 0.0744927, a: 1}
+    - _Color: {r: 0.3059358, g: 0.509434, b: 0.07449267, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4158721730023517144

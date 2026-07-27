@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7803201500612211968}
   - component: {fileID: 119522322830122257}
   - component: {fileID: 7144149132364432793}
-  - component: {fileID: 2023252671934604115}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Cactus_01c_LOD0
   m_TagString: Untagged
@@ -91,19 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2023252671934604115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693345071401839428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.030259885, g: 0.3773585, b: 0.10172135, a: 1}
 --- !u!1 &3027872463312937634
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +101,6 @@ GameObject:
   - component: {fileID: 3787679605364832370}
   - component: {fileID: 8866149530060482740}
   - component: {fileID: 6932303090243979314}
-  - component: {fileID: 3302052023431951895}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Cactus_01c_LOD1
   m_TagString: Untagged
@@ -195,19 +180,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3302052023431951895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027872463312937634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.030259885, g: 0.3773585, b: 0.10172135, a: 1}
 --- !u!1 &4401624483307122157
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +191,6 @@ GameObject:
   - component: {fileID: 2792069934390154177}
   - component: {fileID: 7200049713030065924}
   - component: {fileID: 6578529899643265829}
-  - component: {fileID: 7667542858938900637}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Cactus_01c_LOD2
   m_TagString: Untagged
@@ -299,19 +270,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7667542858938900637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4401624483307122157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.030259885, g: 0.3773585, b: 0.10172135, a: 1}
 --- !u!1 &7536069601376865478
 GameObject:
   m_ObjectHideFlags: 0

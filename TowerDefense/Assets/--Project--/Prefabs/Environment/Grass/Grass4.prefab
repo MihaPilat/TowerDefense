@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3133642290944881115}
   - component: {fileID: 6641215491932615327}
   - component: {fileID: 7871858018458330812}
-  - component: {fileID: 4472715304210180488}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Grass_01a_LOD0
   m_TagString: Untagged
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 50d01b9626647914a8063d69e7d4fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,19 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4472715304210180488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060833511915898457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0, g: 0.6037736, b: 0.009232071, a: 1}
 --- !u!1 &1508537555309709905
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +101,6 @@ GameObject:
   - component: {fileID: 5738648711655532607}
   - component: {fileID: 6002411440787739037}
   - component: {fileID: 7683791282740476109}
-  - component: {fileID: 4201682204716829017}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Grass_01a_LOD2
   m_TagString: Untagged
@@ -171,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 50d01b9626647914a8063d69e7d4fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,19 +180,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4201682204716829017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508537555309709905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0, g: 0.6037736, b: 0.009232071, a: 1}
 --- !u!1 &3922360947855439863
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +191,6 @@ GameObject:
   - component: {fileID: 955090430007343974}
   - component: {fileID: 6837366927807567578}
   - component: {fileID: 3922949164895272344}
-  - component: {fileID: 5979934839406275598}
   m_Layer: 0
   m_Name: EA04_Env_Plants_Grass_01a_LOD1
   m_TagString: Untagged
@@ -275,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 50d01b9626647914a8063d69e7d4fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,19 +270,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5979934839406275598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922360947855439863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0, g: 0.6037736, b: 0.009232071, a: 1}
 --- !u!1 &4932121267396693042
 GameObject:
   m_ObjectHideFlags: 0
