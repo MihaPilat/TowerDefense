@@ -5,13 +5,13 @@ public class GlobalInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        //BindCurrencyService();
+        BindInputReader();
     }
 
-    //private void BindCurrencyService()
-    //{
-    //    Container.Bind<CurrencyService>()
-    //        .AsSingle()
-    //        .NonLazy();
-    //}
+    private void BindInputReader()
+    {
+        Container.BindInterfacesAndSelfTo<InputReader>()
+            .AsSingle()
+            .NonLazy();
+    }
 }
