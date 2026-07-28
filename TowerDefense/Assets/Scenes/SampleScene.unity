@@ -5677,6 +5677,7 @@ Transform:
   - {fileID: 1227483322}
   - {fileID: 2076469447}
   - {fileID: 49048593}
+  - {fileID: 2363734680494669803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456065441
@@ -8267,7 +8268,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1447034064}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8287,7 +8288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8295,7 +8296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8350,6 +8351,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
   m_PrefabInstance: {fileID: 2363734680494669801}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2363734680494669803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b535359824d1ca41945a6b836c1e708, type: 3}
+  m_PrefabInstance: {fileID: 2363734680494669801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &2861012648131595062
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8390,4 +8396,3 @@ SceneRoots:
   - {fileID: 560148980}
   - {fileID: 484208410}
   - {fileID: 1447034064}
-  - {fileID: 2363734680494669801}

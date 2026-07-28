@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 4454892641399299635}
   - component: {fileID: 5883708757104269256}
   - component: {fileID: 6331091124676439003}
-  - component: {fileID: 9130960648426641437}
   m_Layer: 0
   m_Name: EA04_Env_Stone_Sand_01b_LOD2
   m_TagString: Untagged
@@ -153,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 4639e3d9dbc519d429377734ec4f44f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,19 +176,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9130960648426641437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5810587632182788517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
 --- !u!1 &8294646677308311920
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +187,6 @@ GameObject:
   - component: {fileID: 2498820767348909783}
   - component: {fileID: 3760864837347755227}
   - component: {fileID: 611592690093595209}
-  - component: {fileID: 1043549250777193355}
   m_Layer: 0
   m_Name: EA04_Env_Stone_Sand_01b_LOD1
   m_TagString: Untagged
@@ -257,7 +242,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 4639e3d9dbc519d429377734ec4f44f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,19 +266,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1043549250777193355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8294646677308311920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
 --- !u!1 &8599478570612621130
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +277,6 @@ GameObject:
   - component: {fileID: 834825179312536453}
   - component: {fileID: 1874618483580493617}
   - component: {fileID: 516677254006554058}
-  - component: {fileID: 1823723202811340120}
   m_Layer: 0
   m_Name: EA04_Env_Stone_Sand_01b_LOD0
   m_TagString: Untagged
@@ -361,7 +332,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4255dde21a29144d802db7a03a5966e, type: 2}
+  - {fileID: 2100000, guid: 4639e3d9dbc519d429377734ec4f44f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -385,16 +356,3 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1823723202811340120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8599478570612621130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
