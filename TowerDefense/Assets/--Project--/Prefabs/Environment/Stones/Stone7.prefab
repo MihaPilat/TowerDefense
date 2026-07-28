@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7171176734643066837}
   - component: {fileID: 7431748163064346215}
   - component: {fileID: 957843374851163066}
-  - component: {fileID: 997738493693463949}
   m_Layer: 0
   m_Name: EA04_Env_Rocks_Gray_02b.001_LOD1
   m_TagString: Untagged
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe085730854a47e41afee6d0ec00eb4a, type: 2}
+  - {fileID: 2100000, guid: 969afabc17e94c24fb0a3fd312fe097a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,19 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &997738493693463949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937147833071541228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
 --- !u!1 &4071363266601231197
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +101,6 @@ GameObject:
   - component: {fileID: 3302501761790814524}
   - component: {fileID: 7387525384202897780}
   - component: {fileID: 4465638416216523184}
-  - component: {fileID: 952606345077423446}
   m_Layer: 0
   m_Name: EA04_Env_Rocks_Gray_02b.001_LOD0
   m_TagString: Untagged
@@ -171,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe085730854a47e41afee6d0ec00eb4a, type: 2}
+  - {fileID: 2100000, guid: 969afabc17e94c24fb0a3fd312fe097a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,19 +180,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &952606345077423446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4071363266601231197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
 --- !u!1 &8367687254328982942
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +277,6 @@ GameObject:
   - component: {fileID: 8727591600930218394}
   - component: {fileID: 8966079312189015588}
   - component: {fileID: 4828256547712040052}
-  - component: {fileID: 3019569468567382288}
   m_Layer: 0
   m_Name: EA04_Env_Rocks_Gray_02b.001_LOD2
   m_TagString: Untagged
@@ -361,7 +332,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe085730854a47e41afee6d0ec00eb4a, type: 2}
+  - {fileID: 2100000, guid: 969afabc17e94c24fb0a3fd312fe097a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -385,16 +356,3 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3019569468567382288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488968806576703479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119279248a7981c48ae928d9deeab00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColorOverride
-  _color: {r: 0.5188679, g: 0.46275046, b: 0.25698647, a: 1}
