@@ -6,6 +6,7 @@ public class GlobalInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindInputReader();
+        BindPauseManager();
     }
 
     private void BindInputReader()
@@ -14,4 +15,11 @@ public class GlobalInstaller : MonoInstaller
             .AsSingle()
             .NonLazy();
     }
+    private void BindPauseManager()
+    {
+        Container.BindInterfacesAndSelfTo<PauseManager>()
+            .AsSingle()
+            .NonLazy();
+    }
+
 }
