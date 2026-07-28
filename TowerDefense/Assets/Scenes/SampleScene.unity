@@ -5086,6 +5086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af421dead4a6ae4dbccb0d6df261fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayInstaller
+  _cursorSettings: {fileID: 11400000, guid: ff8f34394bd157447aff03f67edbcf4b, type: 2}
   _enemyPath: {fileID: 1534783274}
   _baseHealth: {fileID: 1415511781}
   _mainCamera: {fileID: 330585545}

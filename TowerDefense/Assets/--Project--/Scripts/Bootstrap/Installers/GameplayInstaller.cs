@@ -5,6 +5,7 @@ using Zenject;
 
 public class GameplayInstaller : MonoInstaller
 {
+    [SerializeField] private CursorSettings _cursorSettings;
     [SerializeField] private EnemyPath _enemyPath;
     [SerializeField] private BaseHealth _baseHealth;
     [SerializeField] private Camera _mainCamera;
@@ -27,6 +28,22 @@ public class GameplayInstaller : MonoInstaller
         BindBuildController();
         BindTowerMenuUI();
         BindTowerSelectionController();
+        BindCursorSettings();
+        BindCursorService();
+    }
+
+    private void BindCursorService()
+    {
+        Container.BindInterfacesTo<CursorService>()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindCursorSettings()
+    {
+        Container.BindInstance(_cursorSettings)
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindWaveService()
