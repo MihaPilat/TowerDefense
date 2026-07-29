@@ -28,4 +28,4 @@ MonoBehaviour:
     Damage: 20
     AttackRange: 17
     AttackCooldown: 1
-  <ProjectilePrefab>k__BackingField: {fileID: 1273496147326950, guid: 7fa2d40747d0cde4fbec8d5c15fbbb2b, type: 3}
+  <ProjectilePrefab>k__BackingField: {fileID: 2584557603341787001, guid: a3d79a16427af534eb72a116964a588a, type: 3}

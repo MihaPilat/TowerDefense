@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] protected ProjectileConfig _config;
+    [SerializeField] private TrailRenderer _trailRenderer;
 
     protected IDamageable _target;
     protected PoolFactory _poolFactory;
@@ -16,6 +17,11 @@ public abstract class Projectile : MonoBehaviour, IProjectile
         _prefab = prefab;
         _poolFactory = poolFactory;
         _damageInfo = damageInfo;
+
+        if (_trailRenderer != null)
+        {
+            _trailRenderer.Clear();
+        }
 
         if (target != null)
         {
