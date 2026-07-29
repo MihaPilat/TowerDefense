@@ -32,6 +32,6 @@ public class WaveUI : MonoBehaviour
 
     private void UpdateWave(int wave) => _waveText.text = $"{wave}";
 
-    private void UpdateEnemies(int enemies) => _remainingEnemiesText.text = $"{enemies}";
+    private void UpdateEnemies(int enemies) => _remainingEnemiesText.text = $"{enemies}/{_waveService.TotalEnemies}";
     
 }

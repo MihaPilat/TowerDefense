@@ -12,12 +12,14 @@ public class WaveService
     public int CurrentWave { get; private set; }
 
     public int RemainingEnemies { get; private set; }
+    public int TotalEnemies { get; private set; }
 
     public bool IsWaveCompleted => RemainingEnemies <= 0;
 
     public void StartWave(int waveNumber, int enemiesCount)
     {
         CurrentWave = waveNumber;
+        TotalEnemies = enemiesCount;
         RemainingEnemies = enemiesCount;
 
         OnWaveStarted?.Invoke();
