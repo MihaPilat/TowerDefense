@@ -1014,7 +1014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 470}
+  m_AnchoredPosition: {x: 0, y: 481.44}
   m_SizeDelta: {x: 244.9744, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118820612
@@ -3170,6 +3170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveUI
   _waveText: {fileID: 639207505}
   _remainingEnemiesText: {fileID: 200252097}
+  _punchScale: 1.2
+  _animationDuration: 0.2
 --- !u!1 &639207503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,8 +3343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.8801, y: 0.000015258789}
-  m_SizeDelta: {x: 57.7603, y: -11.8495}
+  m_AnchoredPosition: {x: 40.374603, y: 0.000015258789}
+  m_SizeDelta: {x: 80.7491, y: -11.8495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641004847
 MonoBehaviour:
@@ -3364,7 +3366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9637c09c2369fa4d9221c6277591af9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2639c19db99f8494981b2b2a3569f2e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3984,8 +3986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167.26747, y: 0.000049591064}
-  m_SizeDelta: {x: 188.8523, y: 0.0001}
+  m_AnchoredPosition: {x: -170.26491, y: 0.000049591064}
+  m_SizeDelta: {x: 194.847, y: 0.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &832575517
 GameObject:
@@ -4444,7 +4446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3cc91423c82b0aa4baa75438180963ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81abb15d2baf49247adc4ecfdac19b3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6363,7 +6365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174, y: -70}
+  m_AnchoredPosition: {x: 175, y: -58.56}
   m_SizeDelta: {x: 204.91565, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410228103
@@ -6380,6 +6382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseHealthUI
   _healthText: {fileID: 1103728921}
   _heartIcon: {fileID: 1760464287}
+  _pulseScale: 1.1
+  _pulseDuration: 0.8
 --- !u!1 &1415511780
 GameObject:
   m_ObjectHideFlags: 0
@@ -8145,8 +8149,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255598
-  m_fontColor: {r: 0.93412864, g: 1, b: 0, a: 1}
+    rgba: 4294967031
+  m_fontColor: {r: 0.9686275, g: 0.9960785, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8509,7 +8513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -103.73901, y: -129.28528}
+  m_AnchoredPosition: {x: -112.92, y: -128}
   m_SizeDelta: {x: 207.478, y: 358.5704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2026948074
