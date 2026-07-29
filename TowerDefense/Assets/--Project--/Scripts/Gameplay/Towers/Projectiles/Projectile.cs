@@ -4,6 +4,7 @@ public abstract class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] protected ProjectileConfig _config;
     [SerializeField] private TrailRenderer _trailRenderer;
+    [SerializeField] protected ImpactEffect _impactEffectPrefab;
 
     protected IDamageable _target;
     protected PoolFactory _poolFactory;
@@ -72,6 +73,17 @@ public abstract class Projectile : MonoBehaviour, IProjectile
         }
     }
     protected abstract void Impact();
+
+    protected void SpawnImpactEffect(float radius = 0f)
+    {
+        if (_impactEffectPrefab == null || _poolFactory == null) return;
+
+        ImpactEffect effect = _poolFactory.Get(_impactEffectPrefab);
+        effect.transform.position = transform.position;
+        effect.transform.rotation = Quaternion.identity;
+
+        effect.Init(_poolFactory, _impactEffectPrefab, radius);
+    }
 
     protected void ReturnToPool()
     {

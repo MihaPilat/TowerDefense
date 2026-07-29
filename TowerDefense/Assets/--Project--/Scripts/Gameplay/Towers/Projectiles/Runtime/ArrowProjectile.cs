@@ -16,6 +16,8 @@ public class ArrowProjectile : Projectile
     }
     protected override void Impact()
     {
+        SpawnImpactEffect();
+
         if (_target != null)
         {
             _target.TakeDamage(_damageInfo);

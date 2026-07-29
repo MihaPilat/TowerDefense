@@ -6,6 +6,7 @@ public class AoEProjectile : Projectile
 
     protected override void Impact()
     {
+        SpawnImpactEffect(_config.ExplosionRadius);
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, _config.ExplosionRadius, _enemyLayerMask);
 
