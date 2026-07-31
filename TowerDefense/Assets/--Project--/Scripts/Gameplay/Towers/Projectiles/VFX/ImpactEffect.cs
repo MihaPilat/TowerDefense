@@ -3,11 +3,19 @@ using UnityEngine;
 
 public class ImpactEffect : MonoBehaviour
 {
-    [SerializeField] private float _duration = 1f;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private float _duration = 1.5f;
+    [SerializeField] private ParticleSystem[] _particleSystems;
 
     private PoolFactory _poolFactory;
     private ImpactEffect _prefab;
+
+    private void Awake()
+    {
+        if (_particleSystems == null || _particleSystems.Length == 0)
+        {
+            _particleSystems = GetComponentsInChildren<ParticleSystem>();
+        }
+    }
 
     public void Init(PoolFactory poolFactory, ImpactEffect prefab, float radius = 0f)
     {
@@ -17,24 +25,19 @@ public class ImpactEffect : MonoBehaviour
         if (radius > 0f)
         {
             transform.localScale = Vector3.one * (radius * 2f);
-
-            if (_particleSystem != null)
-            {
-                var shape = _particleSystem.shape;
-                if (shape.enabled)
-                {
-                    shape.radius = radius;
-                }
-            }
         }
         else
         {
             transform.localScale = Vector3.one;
         }
 
-        if (_particleSystem != null)
+        if (_particleSystems != null)
         {
-            _particleSystem.Play();
+            foreach (ParticleSystem ps in _particleSystems)
+            {
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                ps.Play();
+            }
         }
 
         StartCoroutine(ReturnToPoolRoutine());

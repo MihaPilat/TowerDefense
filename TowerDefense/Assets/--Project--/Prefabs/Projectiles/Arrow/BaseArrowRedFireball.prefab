@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13679248, g: 0.88778067, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.44577506, b: 0.3066038, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4902,7 +4902,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cf48e68c67ed12544802d5cc33a9ce38, type: 2}
+  - {fileID: 2100000, guid: e3b09d55239ce914fa82600ad549fc4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4936,9 +4936,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3687049633959366535}
   - component: {fileID: 3560247026654286770}
-  - component: {fileID: 2584557603341787001}
+  - component: {fileID: -9216601394574563665}
   m_Layer: 0
-  m_Name: BlueFireball
+  m_Name: BaseArrowRedFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5080,7 +5080,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &2584557603341787001
+--- !u!114 &-9216601394574563665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5089,11 +5089,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8135336427607544594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc08a961f2e7ba4e9740430ef8e07db, type: 3}
+  m_Script: {fileID: 11500000, guid: 308c6ecd48b493d42b582440e0a9b0e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AoEProjectile
-  _config: {fileID: 11400000, guid: 7e616eddb831ce04da85c2a3cee59e17, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowProjectile
+  _config: {fileID: 11400000, guid: 742f3d16ffaf87d4f8dad0b206e13191, type: 2}
   _trailRenderer: {fileID: 3560247026654286770}
-  _enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  _impactEffectPrefab: {fileID: 3557577448070316654, guid: 2b268e7bb919a7247ae5bfd632488195, type: 3}
